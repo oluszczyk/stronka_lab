@@ -1,5 +1,3 @@
-/* --- ARCHITEKTURA I CZYSTOŚĆ CSS --- */
-/* Zmienne globalne (Design Tokens) umieszczone w selektorze :root */
 :root {
     --primary-color: #0f172a;
     --accent-color: #3b82f6;
@@ -10,15 +8,13 @@
     --transition-speed: 0.3s;
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
-
-/* Reset marginesów i ustawienie box-sizing dla poprawnego liczenia szerokości */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Płynne przewijanie do kotwic (anchor links) */
+/*przewijanie*/
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -31,12 +27,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- DOSTĘPNOŚĆ (A11y) --- */
-/* Wyraźne wyróżnienie elementów podczas nawigacji z klawiatury (klawisz Tab) */
-:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 3px;
-}
+
 
 /* --- US-1: PASEK NAWIGACYJNY --- */
 .navbar {
