@@ -20,6 +20,12 @@ html {
     font-size: 16px;
 }
 
+/* Wyraźne wyróżnienie elementów podczas nawigacji z klawiatury (klawisz Tab) */
+:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}            
+
 body {
     font-family: var(--font-main);
     color: var(--text-main);
