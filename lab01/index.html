@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizytówka Inżynierska - Aleksandra Łuszczyk</title>
+    
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">AŁ</div>
+        <ul class="nav-links">
+            <li><a href="#o-mnie">O mnie</a></li>
+            <li><a href="#projekty">Projekty</a></li>
+            <li><a href="#linki">Linki</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+    <header class="hero-section">
+        <h1>Aleksandra Łuszczyk</h1>
+        <p class="hero-subtitle">Student Cyberbezpieczeństwa</p>
+    </header>
+
+    <main> <!-- O mnie --> 
+        <section id="o-mnie" class="about-section">
+            <div class="about-content">
+                <h2>O mnie</h2>
+                <p>Jestem studentem III semestru Cyberbezpieczeństwa.</p>
+            </div>
+            <div class="about-image">
+                <img src="assets/avatar.webp" alt="Zdjęcie profilowe">
+            </div>
+
+        </section> <!--Kafelki projektów / zainteresowań -->
+        <section id="projekty" class="projects-section">
+            <h2>Projekty i Zainteresowania</h2>
+            <div class="projects-grid">
+                <!-- Kafelek 1 -->
+                <article class="project-card">
+                    <img src="assets/icon.svg" alt="Ikona projektu 1" class="project-icon">
+                    <h3>Skaner Podatności</h3>
+                    <p>Skrypt w Pythonie analizujący nagłówki HTTP pod kątem bezpieczeństwa.</p>
+                    <span class="project-tag">Python / Security</span>
+                </article>
+                <!-- Kafelek 2 -->
+                <article class="project-card">
+                    <img src="assets/icon.svg" alt="Ikona projektu 2" class="project-icon">
+                    <h3>Hardening Linuxa</h3>
+                    <p>Zbiór konfiguracji zabezpieczających serwer Ubuntu przed podstawowymi atakami.</p>
+                    <span class="project-tag">SysAdmin</span>
+                </article>
+                <!-- Kafelek 3 -->
+                <article class="project-card">
+                    <img src="assets/icon.svg" alt="Ikona projektu 3" class="project-icon">
+                    <h3>Wizytówka HTML5</h3>
+                    <p>W pełni responsywna, bezpieczna strona bez użycia frameworków i kodu JS.</p>
+                    <span class="project-tag">Front-End</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- US-7) -->
+        <section class="widgets-section">
+            <h2>Moduły (Lab 02)</h2>
+            <div class="widgets-container">
+                <div id="weather-box" class="widget-slot">Miejsce na widget pogodowy</div>
+                <div id="calendar-box" class="widget-slot">Miejsce na kalendarz</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- US-5: Panel z odnośnikami zewnętrznymi -->
+    <aside id="linki" class="links-section">
+        <h2>Źródła i Linki Zewnętrzne</h2>
+        <ul class="external-links">
+            <li><a href="https://github.com/oluszczyk" target="_blank" rel="noopener noreferrer">Mój profil GitHub</a></li>
+            <li><a href="https://developer.mozilla.org/pl/" target="_blank" rel="noopener noreferrer">Dokumentacja MDN Web Docs</a></li>
+            <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">Fundacja OWASP</a></li>
+        </ul>
+    </aside>
+
+    <!--US-6-->
+    <footer id="kontakt" class="contact-section">
+        <h2>Kontakt ze mną</h2>
+        <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="userName">Imię i nazwisko:</label>
+                <input type="text" id="userName" name="userName" placeholder="Np. Anna Nowak" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userEmail">Adres e-mail:</label>
+                <input type="email" id="userEmail" name="userEmail" placeholder="twoj@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userMessage">Treść wiadomości (min. 10 znaków):</label>
+                <textarea id="userMessage" name="userMessage" rows="5" placeholder="Napisz do mnie wiadomość..." minlength="10" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Wyślij wiadomość</button>
+        </form>
+        <p class="footer-copy">&copy; 2026 Aleksandra Łuszczyk. Strona wykonana w 100% w HTML5 i CSS.</p>
+    </footer>
+
+</body>
+</html>

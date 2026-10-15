@@ -1,0 +1,341 @@
+/* --- ARCHITEKTURA I CZYSTOŚĆ CSS --- */
+/* Zmienne globalne (Design Tokens) umieszczone w selektorze :root */
+:root {
+    --primary-color: #0f172a;
+    --accent-color: #3b82f6;
+    --text-main: #334155;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition-speed: 0.3s;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Reset marginesów i ustawienie box-sizing dla poprawnego liczenia szerokości */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Płynne przewijanie do kotwic (anchor links) */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* --- DOSTĘPNOŚĆ (A11y) --- */
+/* Wyraźne wyróżnienie elementów podczas nawigacji z klawiatury (klawisz Tab) */
+:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* --- US-1: PASEK NAWIGACYJNY --- */
+.navbar {
+    position: sticky; /* Przypięcie do góry podczas przewijania */
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.nav-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- US-2: SEKCJA POWITALNA (HERO) --- */
+.hero-section {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero-section h1 {
+    /* Fluid Typography: Płynne skalowanie tekstu od 2rem do 4rem bez Media Queries */
+    font-size: clamp(2rem, 5vw, 4rem); 
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+}
+
+/* Wspólne style dla sekcji */
+section, aside, footer {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- US-3: SEKCJA O MNIE --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+    border: 4px solid var(--accent-color);
+    max-height: 300px;
+}
+
+/* --- US-4: PROJEKTY (CSS GRID) --- */
+.projects-grid {
+    display: grid;
+    /* Elastyczna siatka: kafelki min 300px szerokości, dopasowują się do kontenera */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Reakcja na najechanie (Hover) */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* --- US-7: SLOTY NA WIDGETY --- */
+.widgets-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.widget-slot {
+    flex: 1;
+    min-height: 200px;
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: bold;
+    background-color: var(--bg-white);
+}
+
+/* --- US-5: PANEL Z LINKAMI --- */
+.links-section {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    text-align: center;
+}
+
+.links-section h2 {
+    color: var(--bg-white);
+}
+
+.external-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.external-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    background-color: var(--bg-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.external-links a:hover {
+    background-color: #cbd5e1;
+}
+
+/* --- US-6: SEMANTYCZNY FORMULARZ KONTAKTOWY --- */
+.contact-section {
+    background-color: var(--bg-white);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Stan :focus dla pól formularza */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* =========================================
+   RESPONSYWNOŚĆ (MEDIA QUERIES - RWD)
+   Wszystkie reguły wg zaleceń zebrane na końcu.
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Nawigacja ułożona w kolumnę na telefonach */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Sekcja "O mnie" przeskakuje na układ pionowy */
+    .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .about-content h2 {
+        text-align: center;
+    }
+
+    /* Sloty pod widgety ułożone pionowo na telefonach */
+    .widgets-container {
+        flex-direction: column;
+    }
+}
