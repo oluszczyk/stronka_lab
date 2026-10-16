@@ -35,7 +35,7 @@ body {
 
 
 
-/* --- US-1: PASEK NAWIGACYJNY --- */
+/* US-1*/
 .navbar {
     position: sticky; /* Przypięcie do góry podczas przewijania */
     top: 0;
@@ -71,7 +71,7 @@ body {
     color: var(--accent-color);
 }
 
-/* --- US-2: SEKCJA POWITALNA (HERO) --- */
+/*US-2*/
 .hero-section {
     background-color: var(--primary-color);
     color: var(--bg-white);
@@ -80,7 +80,6 @@ body {
 }
 
 .hero-section h1 {
-    /* Fluid Typography: Płynne skalowanie tekstu od 2rem do 4rem bez Media Queries */
     font-size: clamp(2rem, 5vw, 4rem); 
     margin-bottom: 0.5rem;
 }
