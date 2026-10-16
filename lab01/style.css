@@ -134,10 +134,8 @@ h2 {
     max-height: 300px;
 }
 
-/* --- US-4: PROJEKTY (CSS GRID) --- */
 .projects-grid {
     display: grid;
-    /* Elastyczna siatka: kafelki min 300px szerokości, dopasowują się do kontenera */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -151,7 +149,7 @@ h2 {
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-/* Reakcja na najechanie (Hover) */
+/* Reakcja na najechanie*/
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -183,7 +181,6 @@ h2 {
     font-weight: bold;
 }
 
-/* --- US-7: SLOTY NA WIDGETY --- */
 .widgets-container {
     display: flex;
     gap: 2rem;
@@ -203,7 +200,6 @@ h2 {
     background-color: var(--bg-white);
 }
 
-/* --- US-5: PANEL Z LINKAMI --- */
 .links-section {
     background-color: var(--primary-color);
     color: var(--bg-white);
@@ -236,7 +232,6 @@ h2 {
     background-color: #cbd5e1;
 }
 
-/* --- US-6: SEMANTYCZNY FORMULARZ KONTAKTOWY --- */
 .contact-section {
     background-color: var(--bg-white);
 }
@@ -270,7 +265,6 @@ h2 {
     transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-/* Stan :focus dla pól formularza */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -300,11 +294,6 @@ h2 {
     font-size: 0.85rem;
     color: #64748b;
 }
-
-/* =========================================
-   RESPONSYWNOŚĆ (MEDIA QUERIES - RWD)
-   Wszystkie reguły wg zaleceń zebrane na końcu.
-   ========================================= */
 
 @media (max-width: 768px) {
     /* Nawigacja ułożona w kolumnę na telefonach */
